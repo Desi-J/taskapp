@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" >
         <link rel="stylesheet" href="css/style.css">
@@ -13,16 +13,17 @@
         <header>
             <h1 class="logo">Task<span>App</span></h1>
             <img class="menu"src="./images/menu.svg" alt="open navigation">
-            <nav>
+            <nav >
+                <img class="exit" src="./images/exit.svg" alt="close navigation">
                 <ul class="main-links">
-                    <li><a class="current" href="#hero">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a class="current link" href="#hero">Home</a></li>
+                    <li><a class="link" href="#features">Features</a></li>
+                    <li><a class="link" href="#">About</a></li>
                 </ul>
 
                 <ul class="side-links">
-                    <li><a href="#">Sign In</a></li>
-                    <li><a class="try-free-cta" href="#">Get Started</a></li>
+                    <li><a  class="link" href="#">Sign In</a></li>
+                    <li><a class="try-free-cta link" href="#signup">Get Started</a></li>
                 </ul>
             </nav>
         </header>
@@ -46,7 +47,7 @@
             </div>
         </section>
 <!-- FEATURES -->
-        <section class="features">
+        <section class="features" id="features">
             <div class="container">
                 <ul>
                     <li>Unlimited Tasks</li>
@@ -65,33 +66,33 @@
 
 <!-- TESTIMONIALS -->
 <section class="testimonials">
-    <div class="container">
+    <div class="container ">
         <div class="review">
             <img src="./images/person1.jpg" alt="person">
-            <p class="unsplash-credit">Photo by <a href="https://unsplash.com/@jkakaroto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jonas Kakaroto</a> on <a href="https://unsplash.com/s/photos/person?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-            </p>
-            <blockquote></blockquote>
+            <!-- <p class="unsplash-credit">Photo by <a href="https://unsplash.com/@jkakaroto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jonas Kakaroto</a> on <a href="https://unsplash.com/s/photos/person?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> -->
+            <!-- </p> -->
+            <blockquote>"I love that it syncs with my phone and computer."</blockquote>
             <cite>- John Doe</cite>
         </div>
         <div class="review">
             <img src="./images/person2.jpg" alt="person">
-            <p>Photo by <a href="https://unsplash.com/@chrisjoelcampbell?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christopher Campbell</a> on <a href="https://unsplash.com/s/photos/person?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-            </p>
-            <blockquote></blockquote>
+            <!-- <p>Photo by <a href="https://unsplash.com/@chrisjoelcampbell?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christopher Campbell</a> on <a href="https://unsplash.com/s/photos/person?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> -->
+            <!-- </p> -->
+            <blockquote>"I needed a simple reminder app and this was it!"</blockquote>
             <cite>- Jane Smith</cite>
         </div>
         <div class="review">
             <img src="./images/person3.jpg" alt="person">
-            <p>Photo by <a href="https://unsplash.com/@emberglo_photography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ransford Quaye</a> on <a href="https://unsplash.com/s/photos/person?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-            </p>
-            <blockquote></blockquote>
+            <!-- <p>Photo by <a href="https://unsplash.com/@emberglo_photography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ransford Quaye</a> on <a href="https://unsplash.com/s/photos/person?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> -->
+            <!-- </p> -->
+            <blockquote>"Beats most paid applications by a mile"</blockquote>
             <cite>- Barry Tone</cite>
         </div>
     </div>
 </section>
 
 <!-- SIGN UP -->
-<section class="signup">
+<section class="signup" id="signup">
     <div class="container">
         <form action="">
             <h3>Sign Up Today</h3>
@@ -101,8 +102,10 @@
             <label for="email">Email</label>
             <input type="email" name="email" id="email">
 
-            <input type="checkbox" name="robot" id="robot">
-            <label for="robot"> I am NOT a robot</label>
+            <div class="check-container">
+                <input type="checkbox" name="robot" id="robot" >
+                <label for="robot"> I am NOT a robot</label>
+            </div>
 
             <input class="btn" type="submit" value="Try Free">
         </form> 
@@ -114,6 +117,10 @@
 <footer>
 
 </footer>
+
+<script src="./js/main.js"></script>
+    
+
     </body>
 
 </html>

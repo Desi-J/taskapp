@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 :root {
   --primary-color: #d83d7e;
-  --darker-primary: #c7447b;
+  --darker-primary: #b34271;
+  --dark-grey: #20272e;
 }
 
 * {
@@ -13,6 +14,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background: #f4f4f4;
   font-size: 1.1em;
   color: black;
 }
@@ -30,7 +32,8 @@ img {
   width: 100%;
 }
 
-header, nav {
+header,
+nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,7 +55,7 @@ header, nav {
 
 .btn {
   background: var(--primary-color);
-  padding: .5em 2em;
+  padding: 0.5em 2em;
   font-size: 1.1em;
   color: white;
   border-radius: 1em;
@@ -65,9 +68,10 @@ header, nav {
 }
 
 header {
+  position: relative;
   background-color: white;
   width: 100%;
-  padding: .8em;
+  padding: 0.8em;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -95,11 +99,49 @@ header .menu:hover {
 }
 
 nav {
-  display: none;
+  position: fixed;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background: var(--dark-grey);
+  padding: 1em 2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100vh;
+  z-index: 100;
 }
 
-.hero {
-  background-color: #f4f4f4;
+nav .exit {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  height: 40px;
+  width: 40px;
+}
+
+nav .exit:hover {
+  cursor: pointer;
+}
+
+nav ul li {
+  margin-top: 1em;
+}
+
+nav ul li a {
+  font-size: 1.2rem;
+  color: white;
+}
+
+nav ul li a:hover {
+  border-bottom: 2px solid;
 }
 
 .hero .container {
@@ -125,8 +167,8 @@ nav {
 
 .hero .container .col-a h2 {
   font-size: 2em;
-  margin-top: .3em;
-  margin-bottom: .8em;
+  margin-top: 0.3em;
+  margin-bottom: 0.8em;
 }
 
 .hero .container .col-a .btn {
@@ -150,7 +192,7 @@ nav {
 .hero .container .col-a .tutorial-cta img {
   height: 25px;
   width: 25px;
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 .hero .container .col-b img {
@@ -158,10 +200,12 @@ nav {
   margin: 0 auto;
   width: 80%;
   height: 80%;
+  max-width: 300px;
+  max-height: 300px;
 }
 
 .features {
-  background: #20272E;
+  background: var(--dark-grey);
   color: white;
 }
 
@@ -182,8 +226,8 @@ nav {
 
 .features ul li:before {
   position: absolute;
-  left: .1em;
-  bottom: .2em;
+  left: 0.1em;
+  bottom: 0.2em;
   content: "";
   background-image: url("../images/checkmark.svg");
   height: 25px;
@@ -196,5 +240,140 @@ nav {
 
 .features img {
   display: none;
+}
+
+.testimonials {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.testimonials .container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.testimonials .container:first-child {
+  padding-top: 4.5em;
+}
+
+.testimonials .container .review {
+  position: relative;
+  text-align: center;
+  padding: 1em;
+  background-color: var(--darker-primary);
+  border-radius: 1em;
+  width: 80%;
+  margin: 0 auto 4em;
+}
+
+.testimonials .container .review img {
+  width: 5em;
+  height: 5em;
+  border: 5px solid var(--darker-primary);
+  border-radius: 50%;
+  margin-top: -4.5em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.testimonials .container .review blockquote {
+  margin: 1em;
+}
+
+.testimonials .container .review:last-child {
+  margin-bottom: 0;
+}
+
+.signup .container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.signup .container form {
+  margin-bottom: 5rem;
+}
+
+.signup .container form h3 {
+  margin-bottom: 0.5em;
+  font-size: 1.7rem;
+}
+
+.signup .container form label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.signup .container form input[type="text"],
+.signup .container form input[type="email"] {
+  font-size: 1.2rem;
+  border: 1px solid grey;
+  background-color: white;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.signup .container form input[type="checkbox"] {
+  display: inline;
+  height: 25px;
+  width: 25px;
+  margin-right: 1em;
+}
+
+.signup .container form .check-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.signup .container iframe {
+  width: 80%;
+  margin: 0 auto;
+  height: 300px;
+}
+
+@media only screen and (min-width: 600px) {
+  header .menu {
+    display: none;
+  }
+  header nav {
+    position: relative;
+    background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    color: black;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header nav ul li {
+    margin-right: 0.5em;
+  }
+  header nav ul li a {
+    color: black;
+  }
 }
 /*# sourceMappingURL=style.css.map */
