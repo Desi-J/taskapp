@@ -8,8 +8,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -34,21 +33,13 @@ img {
 
 header,
 nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin: 0 auto;
   padding: 2em 1em;
 }
@@ -70,19 +61,16 @@ nav {
 header {
   position: relative;
   background-color: white;
+  box-shadow: -2px -2px 3px 1px rgba(0, 0, 0, 0.3);
   width: 100%;
   padding: 0.8em;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header h1 {
   font-size: 1.2em;
-  margin-right: 2em;
+  margin-right: 1em;
 }
 
 header h1 span {
@@ -99,32 +87,30 @@ header .menu:hover {
 }
 
 nav {
+  display: none;
+}
+
+nav.menu-btn {
+  display: block;
+}
+
+nav {
   position: fixed;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   background: var(--dark-grey);
-  padding: 1em 2em;
-  position: absolute;
+  padding: 1em;
   top: 0;
   right: 0;
   width: 60%;
   height: 100vh;
   z-index: 100;
+  text-align: right;
 }
 
 nav .exit {
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  -webkit-filter: invert(1);
-          filter: invert(1);
-  height: 40px;
-  width: 40px;
+  float: right;
+  filter: invert(1);
+  height: 30px;
+  width: 30px;
 }
 
 nav .exit:hover {
@@ -144,11 +130,12 @@ nav ul li a:hover {
   border-bottom: 2px solid;
 }
 
+nav .main-links {
+  margin-top: 5em;
+}
+
 .hero .container {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .hero .container .col-a {
@@ -178,15 +165,9 @@ nav ul li a:hover {
 .hero .container .col-a .tutorial-cta {
   display: block;
   margin-top: 2em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero .container .col-a .tutorial-cta img {
@@ -211,10 +192,8 @@ nav ul li a:hover {
 
 .features ul {
   padding-left: 1em;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(19rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 }
 
 .features ul li {
@@ -248,10 +227,7 @@ nav ul li a:hover {
 }
 
 .testimonials .container {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .testimonials .container:first-child {
@@ -274,8 +250,7 @@ nav ul li a:hover {
   border: 5px solid var(--darker-primary);
   border-radius: 50%;
   margin-top: -4.5em;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .testimonials .container .review blockquote {
@@ -287,10 +262,7 @@ nav ul li a:hover {
 }
 
 .signup .container {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .signup .container form {
@@ -326,8 +298,6 @@ nav ul li a:hover {
 }
 
 .signup .container form .check-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-bottom: 1em;
 }
@@ -338,42 +308,64 @@ nav ul li a:hover {
   height: 300px;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 700px) {
   header .menu {
     display: none;
   }
   header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
     position: relative;
     background-color: white;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    color: black;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    height: unset;
+    width: 100%;
+  }
+  header nav .exit {
+    display: none;
   }
   header nav ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    align-items: center;
   }
   header nav ul li {
-    margin-right: 0.5em;
+    margin: 0 .7em 0 0;
+  }
+  header nav ul li:last-child {
+    margin: 0;
   }
   header nav ul li a {
     color: black;
+    font-size: 1rem;
+  }
+  header nav .main-links {
+    margin: 0;
+  }
+  header nav .try-free-cta {
+    padding: .2em 1em;
+    border: 3px solid var(--primary-color);
+    border-radius: 5em;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  header nav .try-free-cta:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-bottom: 3px solid var(--primary-color);
+  }
+  .features ul {
+    width: 100%;
+  }
+  .features ul li:last-child {
+    margin-bottom: 1em;
+  }
+  .signup {
+    width: 80%;
+    margin: 0 auto;
+  }
+  iframe {
+    width: 100%;
   }
 }
-/*# sourceMappingURL=style.css.map */
