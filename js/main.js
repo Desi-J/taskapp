@@ -8,11 +8,11 @@ console.log(menuBtn, exitBtn, nav);
 
 
 menuBtn.addEventListener("click", () => {
-   nav.classList.add("menu-btn");
+   nav.classList.add("open");
 });
 
 exitBtn.addEventListener("click", () => {
-   nav.classList.remove("menu-btn");    
+   nav.classList.remove("open");    
     })
 
 
