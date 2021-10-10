@@ -346,6 +346,12 @@ nav {
 footer {
   height: 50px;
   background-color: white;
+  padding: .5rem;
+
+  .tutorial-credit {
+    color: #aaa;
+    font-size: .8rem;
+  }
 }
 
 @media only screen and (min-width: 700px) {
